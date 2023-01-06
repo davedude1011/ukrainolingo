@@ -79,3 +79,5 @@ if (fileName == "more.html") {
         document.getElementById("more-title-text").textContent = "More From me."
     }
 }
+
+window.open("index.html","_self")
