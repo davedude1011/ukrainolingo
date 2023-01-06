@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+/*
+
+Blue: #0066CC
+Yellow: #FFCC00
+Light Blue: #ADD8E6
+Sky Blue: #87CEEB
+Navy Blue: #000080
+Lemon Yellow: #FFFF99
+Mustard Yellow: #FFDB58
+Gold: #FFD700
+White: #FFFFFF
+Grey: #808080
+Black: #000000
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #808080;
+    overflow-y: hidden;
+}
+
+/* mobile code */
+@media screen and (orientation: portrait) {
+    body {
+        overflow-y: scroll;
+    }
+    .pc-code {
+        display: none
+    }
+
+    .side-nav {
+        position: absolute;
+        width: 95vw;
+        height: 5vh;
+        left: 50%;
+        top: 1vh;
+        translate: -50%;
+        background-color: #D9D9D9;
+        border-radius: 25px;
+    }
+    a {
+        font-size:0;
+        text-decoration-line:none;
+    }
+
+    .rest-of-screen-box {
+        position: absolute;
+        height: calc(100vh - (1vh + 5vh + 1vh)); /* in relation to .side-nav */
+        width: 100vw;
+        bottom: 0;
+    }
+
+    .title-text {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        font-size: 12vw;
+        font-weight: bold;
+        font-family: Roboto;
+        color: #87CEEB;
+        font-style: normal !important;
+    }
+
+    .main-area {
+        position: relative;
+        height: calc(100vh - (1vh + 5vh + 1vh) - (12vw));
+    }
+
+    /* home page items */
+    .home-blue-box { background-color: #0066CC; color: white; cursor: pointer; }
+    .home-yellow-box { background-color: #FFDB58; color: #0066CC; cursor: pointer; }
+    .home-box {
+        position: relative;
+        left: 50%;
+        translate: -50%;
+        border-radius: 25px;
+        transition: 0.1s;
+        width: 70vw;
+        aspect-ratio: 1/1;
+        margin-top: 5vh;
+    }
+
+    .home-button-text {
+        position: absolute;
+        left: 0;
+        bottom: 20%;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        font-size: 6vw;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+
+    /* daily streak items */
+    .streak-outside, .streak-inside {
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        translate: -50% -50%;
+        rotate: 90deg;
+    }
+    .streak-inside {
+        zoom: 0.5;
+        height: 65vw;
+    }
+    .streak-outside {
+        zoom: 0.5;
+        height: 70vw;
+    }
+    .streak-reward {
+        position: absolute;
+        right: 2vw;
+        bottom: 2vw;
+        width: 30vw;
+        aspect-ratio: 1/1.2;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    @media screen and (max-height: 827px) {
+        .streak-inside {
+            zoom: 0.4;
+            height: 65vw;
+        }
+        .streak-outside {
+            zoom: 0.4;
+            height: 70vw;
+        }
+    }
+    @media screen and (max-height: 663px) {
+        .streak-inside {
+            zoom: 0.3;
+            height: 65vw;
+        }
+        .streak-outside {
+            zoom: 0.3;
+            height: 70vw;
+        }
+    }
+    @media screen and (max-height: 497px) {
+        .streak-inside {
+            zoom: 0.25;
+            height: 65vw;
+        }
+        .streak-outside {
+            zoom: 0.25;
+            height: 70vw;
+        }
+    }
+}
+
+
+/* pc code */
+@media screen and (orientation: landscape) {
+    .mobile-code {
+        display: none
+    }
+
+    .side-nav {
+        position: absolute;
+        width: 5vw;
+        height: 95vh;
+        left: 1vw;
+        top: 50%;
+        translate: 0 -50%;
+        background-color: #d9d9d9bd;
+        border-radius: 25px;
+    }
+
+    .rest-of-screen-box {
+        position: absolute;
+        width: calc(100vw - (1vw + 5vw + 1vw)); /* in relation to .side-nav */
+        height: 100vh;
+        right: 0;
+    }
+
+    .title-text {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        top: 0;
+        font-size: 8vw;
+        height: fit-content;
+        font-weight: bold;
+        font-family: Roboto;
+        color: #87CEEB;
+        font-style: normal !important;
+    }
+
+    .main-area {
+        position: relative;
+        width: calc(100vw - (1vw + 5vw + 1vw));
+        height: calc(100vh - 8vw)
+    }
+
+    /* home page items */
+    .home-table {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        border-spacing: 5vh;
+    }
+    .home-blue-box { background-color: #0066CC; color: white; cursor: pointer; }
+    .home-yellow-box { background-color: #FFDB58; color: #0066CC; cursor: pointer; }
+    .home-box {
+        position: relative;
+        border-radius: 25px;
+        translate: 0 -15px;
+        transition: 0.1s;
+    }
+    .home-box:hover {
+        translate: 0 -5px
+    }
+    .home-box-background {
+        position: relative;
+        border-radius: 25px;
+        filter: brightness(80%);
+    }
+
+    .home-button-text {
+        position: absolute;
+        left: 0;
+        bottom: 20%;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        font-size: 2vw;
+        font-weight: bold;
+        font-family: Roboto;
+    }
+
+    /* daily streak items */
+    .streak-outside, .streak-inside {
+        position: absolute;
+        left: 42%;
+        top: 50%;
+        translate: -50% -50%;
+    }
+    .streak-inside {
+        width: 69vw;
+    }
+    .streak-outside {
+        width: 70vw;
+    }
+    .streak-reward {
+        position: absolute;
+        right: 2vw;
+        top: 50%;
+        translate: 0 -50%;
+        width: 10vw;
+        aspect-ratio: 1/1.2;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .home-table {
+        position: absolute;
+        width: 80%;
+        height: 70%;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        border-spacing: 5vh;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .home-table {
+        position: absolute;
+        width: 80%;
+        height: 60%;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        border-spacing: 5vh;
+    }
+}
