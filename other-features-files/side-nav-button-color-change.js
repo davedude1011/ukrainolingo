@@ -80,4 +80,8 @@ if (fileName == "more.html") {
     }
 }
 
-window.open("index.html","_self")
+window.onload = function() {
+    if (fileName != "index.html" && fileName != "streak.html" && fileName != "trophy.html" && fileName != "shop.html" && fileName != "settings.html" && fileName != "report.html" && fileName != "more.html") {
+        window.open("index.html","_self")
+    }
+}
