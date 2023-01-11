@@ -4,6 +4,10 @@ var yellowOuter = "data:image/svg+xml,%3Csvg width='76' height='76' viewBox='0 0
 var fileName = location.href.split("/").slice(-1);
 console.log(fileName)
 
+function puzzleStartAchievement() {
+    localStorage.setItem("A2Complete", true)
+}
+
 if (fileName == "index.html") {
     document.getElementById("home-outer").classList.add("yellow-ring")
     if (Math.random() <= 0.5) {
@@ -16,6 +20,7 @@ if (fileName == "index.html") {
     if (localStorage.getItem("storyStarted") == null) {
         document.getElementById("story-path").addEventListener("click", function() {
             localStorage.setItem("storyStarted", "started")
+            localStorage.setItem("A1Complete", true)
         })
         document.getElementById("story-path-text").textContent = "Start Story Path"
         document.getElementById("story-path-text-mobile").textContent = "Start Story Path"

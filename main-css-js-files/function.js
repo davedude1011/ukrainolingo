@@ -1,9 +1,8 @@
-var Kcoins = 0
-
-if (localStorage.getItem("Kcoins") >= 0) {
-    console.log("Kcoins = " + localStorage.getItem("Kcoins"))
+if (localStorage.getItem("Kcoins") == null) {
+    localStorage.setItem("Kcoins", 50)
 }
 else {
-    localStorage.setItem("Kcoins", 0)
-    console.log("Kcoins = " + localStorage.getItem("Kcoins"))
+    var Kcoins = localStorage.getItem("Kcoins")
+    console.log("Kcoins = " + Kcoins)
 }
+document.querySelector(".money-count").textContent = "$" + Kcoins

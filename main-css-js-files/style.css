@@ -24,6 +24,7 @@ Black: #000000
 body {
     background-color: #808080;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 /* mobile code */
@@ -32,6 +33,10 @@ body {
         overflow-y: scroll;
     }
     .pc-code {
+        display: none
+    }
+
+    .money-box, .money-count, .money-text {
         display: none
     }
 
@@ -161,6 +166,50 @@ body {
 
 /* pc code */
 @media screen and (orientation: landscape) {
+    .money-box {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 1vh;
+        width: 8vw;
+        aspect-ratio: 1/1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: 0.15s;
+    }
+    .money-box:hover {
+        rotate: -15deg
+    }
+    .money-count {
+        position: relative;
+        left: 0;
+        top: 50%;
+        translate: 0 -100%;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        font-size: 1.8vw;
+        font-weight: bold;
+        font-family: Roboto;
+        font-style: normal;
+        color: #87CEEB;
+    }
+    .money-text {
+        position: relative;
+        left: 0;
+        top: 50%;
+        translate: 0 -100%;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        font-size: 1.8vw;
+        font-weight: bold;
+        font-family: Roboto;
+        font-style: normal;
+        color: #FFCC00;
+    }
+
     .mobile-code {
         display: none
     }
@@ -264,6 +313,58 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+    }
+
+    /* trophy room items */
+    .trophy-table {
+        position: absolute;
+        left: 50%;
+        bottom: 1vh;
+        translate: -50%;
+        height: 75vh;
+        width: 90vw;
+    }
+    .trophy-box {
+        position: relative;
+        border-radius: 10px;
+    }
+    .trophy-blue { background-color: #87CEEB; color: white }
+    .trophy-yellow { background-color: #FFFF99; color: #0066CC }
+    .trophy-title {
+        position: absolute;
+        font-size: 1.8vw;
+        font-weight: bold;
+        font-family: Roboto;
+        width: 80%;
+        height: fit-content;
+        text-align: center;
+        left: 0;
+        top: 50%;
+        translate: 0 -50%;
+    }
+    .trophy-check-box {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 20%;
+        height: 100%;
+    }
+    .trophy-check-outer {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        height: 50%;
+        aspect-ratio: 1/1;
+    }
+    .trophy-check-inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        height: 15%;
+        aspect-ratio: 1/1;
+        fill-opacity: 0;
     }
 }
 @media screen and (max-width: 1200px) {
